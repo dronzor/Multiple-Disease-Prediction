@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color:#187e74;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border: 2px solid #007bff;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .alert-info {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Heart Disease Prediction</h1>
+        <form method="POST" action="/heart-disease">
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="mb-3">
+                <label for="sex" class="form-label">Sex</label>
+                <select class="form-select" id="sex" name="sex" required>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="cp" class="form-label">Chest Pain Type</label>
+                <input type="number" class="form-control" id="cp" name="cp" required>
+            </div>
+            <div class="mb-3">
+                <label for="trestbps" class="form-label">Resting Blood Pressure</label>
+                <input type="number" class="form-control" id="trestbps" name="trestbps" required>
+            </div>
+            <div class="mb-3">
+                <label for="chol" class="form-label">Serum Cholesterol</label>
+                <input type="number" class="form-control" id="chol" name="chol" required>
+            </div>
+            <div class="mb-3">
+                <label for="fbs" class="form-label">Fasting Blood Sugar</label>
+                <select class="form-select" id="fbs" name="fbs" required>
+                    <option value="1">> 120 mg/dl</option>
+                    <option value="0">< 120 mg/dl</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="restecg" class="form-label">Resting Electrocardiographic Results</label>
+                <input type="number" class="form-control" id="restecg" name="restecg" required>
+            </div>
+            <div class="mb-3">
+                <label for="thalach" class="form-label">Maximum Heart Rate Achieved</label>
+                <input type="number" class="form-control" id="thalach" name="thalach" required>
+            </div>
+            <div class="mb-3">
+                <label for="exang" class="form-label">Exercise Induced Angina</label>
+                <select class="form-select" id="exang" name="exang" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="oldpeak" class="form-label">ST Depression Induced by Exercise</label>
+                <input type="number" step="0.1" class="form-control" id="oldpeak" name="oldpeak" required>
+            </div>
+            <div class="mb-3">
+                <label for="slope" class="form-label">Slope of the Peak Exercise ST Segment</label>
+                <input type="number" class="form-control" id="slope" name="slope" required>
+            </div>
+            <div class="mb-3">
+                <label for="ca" class="form-label">Number of Major Vessels Colored by Fluoroscopy</label>
+                <input type="number" class="form-control" id="ca" name="ca" required>
+            </div>
+            <div class="mb-3">
+                <label for="thal" class="form-label">Thalassemia</label>
+                <input type="number" class="form-control" id="thal" name="thal" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        {% if result %}
+            <div class="mt-4 alert alert-info">
+                {{ result }}
+            </div>
+        {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzYFpmFnGYDGU8Y4lOIt1RdC1BIQHNWrP1sm5dKTw3Kz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyI2zZMFsm8Hqn0zNjuGEl1R7QltbmK6I6YHetN/5zW43dgu8LX7wrK" crossorigin="anonymous"></script>
+</body>
+</html>
