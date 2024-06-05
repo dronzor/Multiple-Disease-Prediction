@@ -25,7 +25,7 @@ heart_model = pickle.load(open('models/heart_disease_model.sav', 'rb'))
 
 
 # Load the trained diabetes prediction model
-diabetes_model = pickle.load(open('D:\project\madicine recommondation system\madical recommendation based on symptoms\models\diabetes_model.sav', 'rb'))
+diabetes_model = pickle.load(open('models/diabetes_model.sav', 'rb'))
 
 
 #============================================================
